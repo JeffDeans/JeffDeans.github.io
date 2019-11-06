@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>我的第二篇博客 | Hexo</title>
+  <title>vcsa6.7部署 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="我的第二篇博客 | Hexo">
+  <meta name="description" content="vcsa6.7部署 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="hexo搭建博客，哈哈">
 <meta property="og:type" content="article">
@@ -301,9 +301,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-我的第二篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-vcsa6.7部署" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">我的第二篇博客</h1>
+        <h1 class="article-title">vcsa6.7部署</h1>
     
     <div class="article-meta">
         
@@ -313,7 +313,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-21 20:01:56'>2019-10-21 18:28</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 17:58:46'>2019-11-06 17:59</time>
         
     </div>
     <div class="article-meta">
@@ -335,7 +335,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于vsphere-vcsa6-7在workstation中的部署"><span class="toc-text">关于vsphere vcsa6.7在workstation中的部署</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -351,15 +351,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##我的第二篇博客，希望以后多多写博客！！！！</p>
-<ol>
-<li>创建一个目录，cd进去</li>
-<li>Github上创建空repo</li>
-<li>npm install -g hexo-cli </li>
-<li>hexo init myBlog</li>
-<li>npm i</li>
-<li></li>
-</ol>
+        <h1 id="关于vsphere-vcsa6-7在workstation中的部署"><a href="#关于vsphere-vcsa6-7在workstation中的部署" class="headerlink" title="关于vsphere vcsa6.7在workstation中的部署"></a>关于vsphere vcsa6.7在workstation中的部署</h1><hr>
+<p>我这里使用的是vmware workstation中的安装，因为我前两天安装的ESXi主机也是用虚拟机模拟出来的，如果继续在ESXi主机分配的虚拟机中安装vcsa,嵌套的虚拟对物理硬件的要求比较高，所以我选择继续在workstation中部署vcsa6.7，步骤如下：</p>
+<blockquote>
+<ul>
+<li>将下载的 VMware-VCSA-all-6.7.0-13643870解压后，用workstation打开对应的ovf文件，导入虚拟机</li>
+<li>导入之后，网上说的要更改虚拟机的配置文件（.vmx后缀），添加guestinfo.cis.vmdir.password、guestinfo.cis.appliance.root.passwd两个参数，分别代表sso的登录密码与root密码（<strong>我的实践结果是没什么用，可以在开机启动过程通过进入/bin/bash修改root密码</strong>）</li>
+<li>看到vcsa界面后，按F2重新修改虚拟机的ip地址（静态）与DNS[如果不设置DNS在后续部署过程中，会报vpxd-svcs启动错误]</li>
+<li>现在还是卡在等待RPM包安装完成</li>
+</ul>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -373,12 +374,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>我的第二篇博客</p>
+    <p><span class="copy-title">文章标题:</span>vcsa6.7部署</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="JeffDeans">JeffDeans</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-21, 18:28:38</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-21, 20:01:56</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第二篇博客">http://yoursite.com/2019/10/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 17:59:59</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 17:58:46</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/vcsa6.7%E9%83%A8%E7%BD%B2/" title="vcsa6.7部署">http://yoursite.com/2019/11/06/vcsa6.7%E9%83%A8%E7%BD%B2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
