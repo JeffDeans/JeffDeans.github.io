@@ -17,8 +17,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
+title: https://blog.ops-ng.top
+email: 384997719@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   耿冯记录工作生活的博客
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -34,6 +34,22 @@ minimal_mistakes_skin: "contrast"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: 
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+
+timezone: Asia/Shanghai
 
 # Exclude from processing.
 # The following items will not be processed, by default.
