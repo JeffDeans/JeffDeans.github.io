@@ -1,0 +1,14 @@
+# 配置存储
+
+[可扩展](https://grafana.com/docs/loki/latest/installation/helm/install-scalable/)安装需要托管对象存储（例如 AWS S3 或 Google Cloud Storage）或自托管存储（例如 Minio）。单个[二进制](https://grafana.com/docs/loki/latest/installation/helm/install-monolithic/)安装只能使用文件系统进行存储。
+
+本指南假设 Loki 将安装在上述模式中，并且`values.yaml`已创建。
+
+**要使用托管对象存储：**
+
+1. 将中`type`的设为或。`storage``values.yaml``gcs``s3`
+2. `loki.storage.gcs`在或下配置存储客户端`loki.storage.s3`。
+
+**要与 Loki 一起安装 Minio：**
+
+1. 更改配置`values.yaml`：
